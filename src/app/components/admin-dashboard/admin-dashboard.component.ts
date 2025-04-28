@@ -64,4 +64,11 @@ export class AdminDashboardComponent implements OnInit {
       });
     }
   }
+  logoutuser(){
+    this.adminService.logout();
+
+  }
+
+
+
 }

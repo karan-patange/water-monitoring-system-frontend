@@ -14,18 +14,18 @@ export class LoginComponent {
   message: string = '';
 
   constructor(
-    private adminservice: AdminServiceService,
+    private service: AdminServiceService,
     private router: Router
   ) {}
 
   login() {
-    this.adminservice.loginWithRole(this.userName, this.passWord, this.role)
+    this.service.loginWithRole(this.userName, this.passWord, this.role)
       .subscribe({
         next: (response: any) => {
           this.message = 'Login Successful!';
 
-          // Save account number and role if needed
-          localStorage.setItem('accountNumber', this.userName);
+          // Save username number and role if needed
+          localStorage.setItem('userName', this.userName);
           localStorage.setItem('role', this.role);
 
           // Redirect based on role
@@ -33,7 +33,7 @@ export class LoginComponent {
             this.router.navigate(['/household']);
           } else if (this.role === 'admin') {
             this.router.navigate(['/admin']);
-          }
+          } 
         },
         error: () => {
           this.message = 'Invalid credentials or role';

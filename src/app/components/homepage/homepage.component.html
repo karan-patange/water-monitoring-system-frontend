@@ -1,9 +1,72 @@
-<div class="homepage-container">
-    <h1>Welcome to Water Usage Monitoring System</h1>
-    <div class="button-group">
-      <button routerLink="/household" class="home-button">Household</button>
-      <button routerLink="/admin" class="home-button">Admin</button>
-      <button routerLink="/login" class="home-button">Login</button>
+<div class="container-fluid bg-light">
+  <!-- Welcome Section -->
+  <div class="row text-center py-5">
+    <div class="col">
+      <h1 class="display-4 text-primary">Welcome to Water Usage Service</h1>
+      <p class="lead text-muted">Track your water usage easily and efficiently!</p>
+      <button class="btn btn-primary btn-lg mt-4" routerLink="/dashboard">
+        <i class="fa fa-tachometer-alt me-2"></i> Go to Dashboard
+      </button>
     </div>
   </div>
-  
+
+  <!-- About Us Section -->
+  <div class="row bg-white py-5">
+    <div class="col-md-6 text-center">
+      <h2>About Us</h2>
+      <p class="text-muted">
+        We are a reliable water service provider committed to helping households track their water consumption. Our services aim to reduce waste, promote sustainability, and ensure efficient use of water resources.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="assets/images/about-us.jpg" class="img-fluid rounded-4 shadow-lg" alt="About Us">
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="row text-center py-5 bg-light">
+    <div class="col">
+      <h2 class="text-primary">Our Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="assets/images/feature1.jpg" class="card-img-top" alt="Feature 1">
+            <div class="card-body">
+              <h5 class="card-title">Track Your Usage</h5>
+              <p class="card-text">Monitor your daily and monthly water usage effortlessly from your dashboard.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="assets/images/feature2.jpg" class="card-img-top" alt="Feature 2">
+            <div class="card-body">
+              <h5 class="card-title">Save Water</h5>
+              <p class="card-text">Receive notifications and tips on how to save water based on your usage patterns.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="assets/images/feature3.jpg" class="card-img-top" alt="Feature 3">
+            <div class="card-body">
+              <h5 class="card-title">Get Reports</h5>
+              <p class="card-text">Generate detailed reports to analyze your water consumption and find areas for improvement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us Section -->
+  <div class="row bg-white py-5">
+    <div class="col text-center">
+      <h2>Contact Us</h2>
+      <p class="text-muted">Have questions or need assistance? Reach out to our support team!</p>
+      <button class="btn btn-danger btn-lg" routerLink="/contact">
+        <i class="fa fa-envelope me-2"></i> Contact Support
+      </button>
+    </div>
+  </div>
+</div>

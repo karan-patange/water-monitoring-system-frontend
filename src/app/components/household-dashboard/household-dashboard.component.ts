@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminServiceService } from 'src/app/services/admin-service.service';
 
 @Component({
   selector: 'app-household-dashboard',
@@ -6,18 +7,53 @@ import { Component } from '@angular/core';
   styleUrls: ['./household-dashboard.component.css']
 })
 export class HouseholdDashboardComponent {
-  household = {
-    ownerName: 'Karan'
-  };
+  // households: any;
   
-  dailyUsage = [
-    { date: new Date(), litersUsed: 120 },
-    { date: new Date('2025-04-23'), litersUsed: 150 }
-  ];
+
+
   
-  monthlyUsage = [
-    { month: 'April 2025', totalLiters: 3700 },
-    { month: 'March 2025', totalLiters: 4200 }
-  ];
+
+  constructor(private service: AdminServiceService) {}
+
+  // ngOnInit(): void {
+  //   const userName = localStorage.getItem('userName'); // Get householdId from localStorage
+  //   if (userName) {
+  //     // Fetch water usage data using the householdId
+  //     this.service.getHouseholdByUsername(userName).subscribe({
+  //       next: (data) => {
+  //         this.households = data;
+  //       },
+  //       error: (err) => {
+  //         console.error('Error fetching water usage history', err);
+  //       }
+  //     });
+  //   }
+  // }
+
+  logoutuser(){
+    this.service.logout();
+
+  }
   
+
+
+
+  households: any;
+
+ngOnInit(): void {
+  const userName = localStorage.getItem('userName');
+  console.log("UserName in LocalStorage: ", userName); // Add this line to check
+  if (userName) {
+    this.service.getHouseholdByUsername(userName).subscribe({
+      next: (data) => {
+        console.log("Household data fetched: ", data); // Add this line to check
+        this.households = data;
+      },
+      error: (err) => {
+        console.error('Error fetching household data', err);
+      }
+    });
+  }
+}
+
 }

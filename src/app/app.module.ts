@@ -16,7 +16,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { LoginComponent } from './components/login/login.component'; // ⬅️ Import this
+import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component'; // ⬅️ Import this
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LoginComponent } from './components/login/login.component'; // ⬅️ I
     HouseholdDashboardComponent,
     UsageModalComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent
     
   
    
